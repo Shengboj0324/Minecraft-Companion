@@ -538,7 +538,7 @@ public final class ArchitectService {
     /** /architect inspect x y z (console or admin): reads the build at a block and reports what the Architect sees, with the full analysis in the log. */
     public void inspectAt(org.bukkit.command.CommandSender sender, org.bukkit.block.Block target) {
         long t0 = System.currentTimeMillis();
-        StructureCapture.detect(plugin, target, captureLimits(), r -> workers.submit(() -> {
+        StructureCapture.detect(plugin, target, captureLimits(), 32, r -> workers.submit(() -> {
             long t1 = System.currentTimeMillis();
             StructureAnalyzer.Report rep = new StructureAnalyzer().analyze(r.model(), r.existing(), null);
             int score = critic.analyze(r.model(), r.existing()).score();
