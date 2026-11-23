@@ -1,0 +1,212 @@
+{
+  "medieval": {
+    "description": "Tudor / high-medieval European: stone plinths, white plaster between dark timber frames, steep spruce roofs.",
+    "guidance": "Cobble/stone foundation 1-2 high. Timber-frame walls: @trim logs at corners and every 3-4 blocks, horizontal beams at each floor line, @wall plaster infill set one block BEHIND the frame for depth. Upper floors may jetty out 1 block. Steep gable roofs (pitch 1) with 1-block overhang, @roof_trim on the gable edges, a stone or brick chimney. Windows 1x2 or 2x2 with trapdoor shutters and a stair/slab sill. Lanterns by doors, flower boxes, paths of dirt_path/gravel.",
+    "roles": {
+      "foundation": [["cobblestone", 3], ["mossy_cobblestone", 1], ["stone", 1], ["andesite", 1]],
+      "wall": [["calcite", 3], ["white_concrete", 1]],
+      "wall_alt": [["spruce_planks", 1]],
+      "trim": [["dark_oak_log", 1]],
+      "accent": [["stone_bricks", 3], ["cracked_stone_bricks", 1]],
+      "column": [["stripped_dark_oak_log", 1]],
+      "floor": [["spruce_planks", 3], ["oak_planks", 1]],
+      "roof": [["spruce_planks", 3], ["dark_oak_planks", 1]],
+      "roof_trim": [["dark_oak_planks", 1]],
+      "window": [["glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["dirt_path", 3], ["coarse_dirt", 1], ["gravel", 1], ["cobblestone", 1]],
+      "plant": [["poppy", 1], ["dandelion", 1], ["azure_bluet", 1], ["oxeye_daisy", 1], ["short_grass", 3]],
+      "leaves": [["oak_leaves", 3], ["birch_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "gothic": {
+    "description": "Gothic cathedral / castle: vertical stone mass, pointed arches, buttresses, steep dark slate roofs, stained glass.",
+    "guidance": "Emphasise verticality: tall narrow bays, pointed arches (arch style=pointed), flying or plain buttresses every 4-6 blocks along long walls, pinnacles (cone/spire on buttress tops). Steep roofs (pitch 2) in deepslate tiles. Large stained-glass windows framed by @trim, a rose window (circle of @window) over the main portal. Use @accent chiseled blocks sparingly at portals and string courses. Twin west towers with spires. Mix cracked/mossy variants for age.",
+    "roles": {
+      "foundation": [["deepslate_bricks", 3], ["cracked_deepslate_bricks", 1], ["cobbled_deepslate", 1]],
+      "wall": [["stone_bricks", 5], ["cracked_stone_bricks", 1], ["mossy_stone_bricks", 1], ["andesite", 1]],
+      "wall_alt": [["polished_andesite", 1]],
+      "trim": [["deepslate_tiles", 1]],
+      "accent": [["chiseled_stone_bricks", 1]],
+      "column": [["deepslate_bricks", 1]],
+      "floor": [["polished_deepslate", 2], ["deepslate_tiles", 1]],
+      "roof": [["deepslate_tiles", 3], ["deepslate_bricks", 1]],
+      "roof_trim": [["polished_deepslate", 1]],
+      "window": [["blue_stained_glass_pane", 3], ["light_blue_stained_glass_pane", 1], ["purple_stained_glass_pane", 1], ["red_stained_glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["polished_andesite", 2], ["andesite", 1], ["cobblestone", 1]],
+      "plant": [["short_grass", 3], ["fern", 1]],
+      "leaves": [["dark_oak_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "fantasy": {
+    "description": "High fantasy / elven / wizard: pale calcite and quartz, teal prismarine roofs, slender towers, organic flourishes.",
+    "guidance": "Slender round towers with tall conical or spire roofs (pitch 2+), many turrets of varying heights, curved or onion domes. Pale @wall with @accent prismarine bands. Large arched windows. Wrap with vines/leaves (@leaves) and flowering azalea. Asymmetry is welcome but keep a clear main axis. Bridges between towers.",
+    "roles": {
+      "foundation": [["mossy_stone_bricks", 2], ["stone_bricks", 1], ["mossy_cobblestone", 1]],
+      "wall": [["calcite", 3], ["polished_diorite", 1]],
+      "wall_alt": [["birch_planks", 1]],
+      "trim": [["dark_oak_log", 1]],
+      "accent": [["prismarine_bricks", 1]],
+      "column": [["quartz_pillar", 1]],
+      "floor": [["birch_planks", 1]],
+      "roof": [["dark_prismarine", 2], ["prismarine_bricks", 1]],
+      "roof_trim": [["dark_oak_planks", 1]],
+      "window": [["light_blue_stained_glass_pane", 2], ["glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["mossy_cobblestone", 2], ["moss_block", 1], ["dirt_path", 1]],
+      "plant": [["allium", 1], ["blue_orchid", 1], ["lily_of_the_valley", 1], ["short_grass", 3]],
+      "leaves": [["azalea_leaves", 2], ["flowering_azalea_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "japanese": {
+    "description": "Traditional Japanese: raised wooden halls, white plaster panels, red-lacquer posts, deep curved tile roofs with wide eaves.",
+    "guidance": "Raise the floor 1-2 blocks on a stone base. Post-and-beam: @column posts (red) at every 3-4 blocks, @trim dark beams, @wall white panels recessed. Very wide eaves (overhang 2) with hip roofs; flare the eave corners up by one block. Pagodas stack shrinking tiers, each with its own hip roof, topped with a spire (fence/end_rod). Engawa veranda with slab floor and fence railing. Gardens: raked gravel @path, cherry @leaves, stone lanterns, water.",
+    "roles": {
+      "foundation": [["polished_andesite", 2], ["andesite", 1], ["stone", 1]],
+      "wall": [["calcite", 3], ["white_concrete", 1]],
+      "wall_alt": [["dark_oak_planks", 1]],
+      "trim": [["dark_oak_log", 1]],
+      "accent": [["mangrove_planks", 1]],
+      "column": [["stripped_mangrove_log", 1]],
+      "floor": [["spruce_planks", 1]],
+      "roof": [["deepslate_tiles", 4], ["cobbled_deepslate", 1]],
+      "roof_trim": [["dark_oak_planks", 1]],
+      "window": [["white_stained_glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["gravel", 3], ["andesite", 1]],
+      "plant": [["pink_petals", 1], ["short_grass", 2], ["fern", 1]],
+      "leaves": [["cherry_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "nordic": {
+    "description": "Viking / Scandinavian: long halls of spruce, heavy log frames, steep shingle roofs, carved gable crossings.",
+    "guidance": "Longhouses (length 2-3x width) with low stone plinth, @trim log frame, @wall planks. Steep gable roofs reaching near the ground, crossed beams (fence/log) projecting past the ridge at each gable end. Few small windows. Torches/lanterns on posts, palisades of logs, wooden docks.",
+    "roles": {
+      "foundation": [["cobblestone", 2], ["stone", 1], ["cobbled_deepslate", 1]],
+      "wall": [["spruce_planks", 1]],
+      "wall_alt": [["stripped_spruce_wood", 1]],
+      "trim": [["spruce_log", 1]],
+      "accent": [["dark_oak_planks", 1]],
+      "column": [["stripped_spruce_log", 1]],
+      "floor": [["spruce_planks", 1]],
+      "roof": [["dark_oak_planks", 2], ["spruce_planks", 1]],
+      "roof_trim": [["spruce_planks", 1]],
+      "window": [["glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["gravel", 2], ["cobblestone", 1], ["coarse_dirt", 1]],
+      "plant": [["fern", 2], ["short_grass", 2], ["sweet_berry_bush", 1]],
+      "leaves": [["spruce_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "desert": {
+    "description": "Mediterranean / Arabian desert: sandstone masses, flat roofs with parapets, domes, courtyards, arcades.",
+    "guidance": "Cubic volumes stacked and stepped back, flat roofs with crenellated or slab parapets, domes (sphere half=top) on drums, slender minaret towers. Arcades of round arches around courtyards with fountains. Deep window reveals (inset 1-2). Palm trees (jungle log + leaves), awnings of wool/banners.",
+    "roles": {
+      "foundation": [["smooth_sandstone", 2], ["sandstone", 2]],
+      "wall": [["smooth_sandstone", 3], ["sandstone", 1]],
+      "wall_alt": [["cut_sandstone", 1]],
+      "trim": [["smooth_red_sandstone", 1]],
+      "accent": [["chiseled_sandstone", 1]],
+      "column": [["cut_sandstone", 1]],
+      "floor": [["smooth_sandstone", 1]],
+      "roof": [["smooth_sandstone", 1]],
+      "roof_trim": [["smooth_red_sandstone", 1]],
+      "window": [["glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["sandstone", 2], ["cut_sandstone", 1]],
+      "plant": [["dead_bush", 1], ["short_grass", 1]],
+      "leaves": [["jungle_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "modern": {
+    "description": "Contemporary: clean white volumes, cantilevers, flat roofs, floor-to-ceiling glass, warm wood cladding accents.",
+    "guidance": "Asymmetric interlocking boxes, cantilevered upper floors, large full-height glass walls (use full 'glass' or 'light_gray_stained_glass' blocks), flat roofs with thin slab edges, wood @wall_alt cladding panels, black @accent window frames. Pools (water), terraces with glass railings (glass_pane), hidden lighting (sea_lantern under slabs).",
+    "roles": {
+      "foundation": [["polished_andesite", 1]],
+      "wall": [["white_concrete", 4], ["smooth_quartz", 1]],
+      "wall_alt": [["stripped_spruce_wood", 1]],
+      "trim": [["light_gray_concrete", 1]],
+      "accent": [["black_concrete", 1]],
+      "column": [["smooth_quartz", 1]],
+      "floor": [["birch_planks", 1]],
+      "roof": [["smooth_quartz", 1]],
+      "roof_trim": [["polished_andesite", 1]],
+      "window": [["glass_pane", 1]],
+      "light": [["sea_lantern", 1]],
+      "path": [["smooth_stone", 2], ["polished_andesite", 1]],
+      "plant": [["short_grass", 2], ["fern", 1]],
+      "leaves": [["azalea_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "classical": {
+    "description": "Greco-Roman / neoclassical: marble temples, colonnades, pediments, domes, symmetrical facades.",
+    "guidance": "Strict symmetry. Stepped stylobate base (3 steps of slabs/stairs). Colonnades of @column quartz pillars with @accent capitals and bases, entablature band above columns, low-pitch pediment roof (pitch 0.5 or gable with slabs) with a triangular tympanum. Domes on drums for grand buildings. Terracotta/granite roofs.",
+    "roles": {
+      "foundation": [["smooth_quartz", 1]],
+      "wall": [["quartz_bricks", 2], ["smooth_quartz", 1], ["calcite", 1]],
+      "wall_alt": [["polished_diorite", 1]],
+      "trim": [["smooth_quartz", 1]],
+      "accent": [["chiseled_quartz_block", 1]],
+      "column": [["quartz_pillar", 1]],
+      "floor": [["polished_diorite", 1]],
+      "roof": [["polished_granite", 2], ["granite", 1]],
+      "roof_trim": [["smooth_quartz", 1]],
+      "window": [["glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["polished_diorite", 2], ["diorite", 1], ["calcite", 1]],
+      "plant": [["short_grass", 2], ["cornflower", 1]],
+      "leaves": [["azalea_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "dwarven": {
+    "description": "Dwarven / industrial fantasy: monumental deepslate and blackstone, copper accents, massive geometric forms.",
+    "guidance": "Heavy, angular, symmetric. Thick battered walls (wider at base), huge rectangular gateways framed by stepped @accent copper, statues of stacked blocks, hexagonal/octagonal halls, long straight halls with pillar rows. Glowing @window orange glass and lanterns on chains.",
+    "roles": {
+      "foundation": [["polished_blackstone_bricks", 2], ["cracked_polished_blackstone_bricks", 1]],
+      "wall": [["deepslate_bricks", 3], ["deepslate_tiles", 1], ["cracked_deepslate_bricks", 1]],
+      "wall_alt": [["polished_blackstone", 1]],
+      "trim": [["polished_deepslate", 1]],
+      "accent": [["waxed_cut_copper", 1]],
+      "column": [["polished_basalt", 1]],
+      "floor": [["polished_deepslate", 1]],
+      "roof": [["deepslate_tiles", 1]],
+      "roof_trim": [["waxed_cut_copper", 1]],
+      "window": [["orange_stained_glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["polished_deepslate", 1], ["cobbled_deepslate", 1]],
+      "plant": [["short_grass", 1]],
+      "leaves": [["spruce_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  },
+  "rustic": {
+    "description": "Rustic village / farmstead: oak plank cottages, log frames, cobble chimneys, gardens and fences.",
+    "guidance": "Small cosy volumes, oak @wall with @trim log corners, cobble foundation, gable roofs with overhang, brick @accent chimneys, fenced gardens, crops, barrels and hay bales as props.",
+    "roles": {
+      "foundation": [["cobblestone", 3], ["mossy_cobblestone", 1]],
+      "wall": [["oak_planks", 3], ["spruce_planks", 1]],
+      "wall_alt": [["stripped_oak_wood", 1]],
+      "trim": [["oak_log", 1]],
+      "accent": [["bricks", 1]],
+      "column": [["stripped_oak_log", 1]],
+      "floor": [["spruce_planks", 1]],
+      "roof": [["spruce_planks", 3], ["dark_oak_planks", 1]],
+      "roof_trim": [["dark_oak_planks", 1]],
+      "window": [["glass_pane", 1]],
+      "light": [["lantern", 1]],
+      "path": [["dirt_path", 2], ["coarse_dirt", 1], ["gravel", 1]],
+      "plant": [["poppy", 1], ["dandelion", 1], ["cornflower", 1], ["short_grass", 3]],
+      "leaves": [["oak_leaves", 1]],
+      "metal": [["iron_bars", 1]]
+    }
+  }
+}

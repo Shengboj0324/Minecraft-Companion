@@ -1,0 +1,32 @@
+name: ClaudeArchitect
+version: '${version}'
+main: io.github.shengboj0324.architect.ArchitectPlugin
+api-version: '26.3'
+description: An AI master builder powered by Claude that you talk to in chat. It designs and constructs new builds and renovates and repairs existing ones, with real visual understanding of what it builds.
+authors: [Micheal]
+website: https://github.com/shengboj0324
+softdepend: [WorldGuard, GriefPrevention, CoreProtect]
+commands:
+  architect:
+    description: Talk to the Architect or commission a build.
+    usage: /architect help
+    aliases: [arch]
+permissions:
+  architect.use:
+    description: Commission designs (uses the server's Claude API credits) and templates, undo, rate.
+    default: op
+  architect.renovate:
+    description: Have existing builds renovated or repaired (/architect renovate, repair; "Architect, fix this base").
+    default: op
+  architect.elevator.use:
+    description: Ride elevator pads (jump to go up, sneak to go down).
+    default: true
+  architect.unlimited:
+    description: Not limited by limits.designs-per-day and limits.tokens-per-day.
+    default: op
+  architect.bypass.protection:
+    description: The Architect may build for this player where land protection would otherwise stop them.
+    default: false
+  architect.admin:
+    description: Reload, survey, run the eval suite, act as other players, bypass cooldowns.
+    default: op

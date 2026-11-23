@@ -1,0 +1,151 @@
+# ClaudeArchitect configuration
+
+anthropic:
+  # Your Claude API key from https://platform.claude.com. Leave empty to read the ANTHROPIC_API_KEY environment variable.
+  # Without a key the plugin still works, using its curated master templates.
+  api-key: ""
+  # Optional API gateway/proxy URL. Leave empty for https://api.anthropic.com.
+  base-url: ""
+  # The model that designs builds. claude-opus-5-5 gives the best architecture; claude-sonnet-5-5 is cheaper and faster.
+  model: claude-opus-5-5
+  # How hard the model thinks: low, medium, high, xhigh, max. high is a good balance for architecture.
+  effort: high
+  # Output token limit per turn (one build batch or one review).
+  max-tokens: 32000
+  # If the model declines a request, retry it automatically on Anthropic's recommended fallback model.
+  fallbacks: true
+
+design:
+  # Most turns (tool calls round trips) one design may take. Typical builds use 8-20.
+  max-turns: 40
+  # Quality gate: designs scoring below this are sent back for refinement (up to max-gate-rejections times).
+  # Designs with CRITICAL issues (e.g. floating blocks) are always sent back.
+  min-score: 80
+  max-gate-rejections: 2
+  # Send isometric renders to Claude so it can critique its build visually (recommended).
+  vision: true
+  # Largest envelope (blocks) and block count one design may use. Mega builds and 1:1 landmarks need room:
+  # 512 x 320 x 512 and 3 million blocks fit a full-size cathedral, stadium or skyscraper. Lower these on small servers.
+  # The world's build height still applies (in the overworld, blocks above y=319 are dropped).
+  max-width: 512
+  max-height: 320
+  max-depth: 512
+  max-blocks: 3000000
+  # Let Claude search the web (Anthropic's server-side web search tool) for the dimensions of real buildings that are not
+  # in the bundled landmark dataset. Searches are billed per use by Anthropic; off by default.
+  web-search: false
+  # How many highly rated past builds are shown to Claude as examples.
+  exemplars-per-prompt: 2
+  # Long sessions are compacted (summarised) once a request reaches this many input tokens.
+  compact-at-input-tokens: 150000
+  # Blocks Claude may never use.
+  banned-blocks: [command_block, chain_command_block, repeating_command_block, structure_block, structure_void, jigsaw,
+                  barrier, light, tnt, spawner, trial_spawner, end_portal, end_portal_frame, nether_portal, end_gateway,
+                  bedrock, lava, fire, soul_fire, moving_piston, test_block, test_instance_block, respawn_anchor]
+
+placement:
+  # Per-tick budget. Placement stops at whichever limit is reached first, so builds never lag the server.
+  blocks-per-tick: 400
+  max-ms-per-tick: 8.0
+  # When the server's average tick time rises above this (ms), placement slows down automatically (0 = never).
+  throttle-mspt: 40.0
+  # Clear trees and terrain above ground inside the footprint before building.
+  clear-site: true
+  # Fill under the ground layer down to solid terrain (no floating foundations on slopes).
+  fill-foundation: true
+  max-foundation-depth: 16
+  # Gap between the player and the front of the build.
+  distance-from-player: 4
+  # Ask the player to /architect confirm before building.
+  require-confirm: false
+
+# How builds meet real, naturally generated terrain. Before Claude designs, the land around the site is surveyed
+# (heights, water, trees, surface blocks and biomes; only loaded chunks are read) and Claude chooses a site mode:
+#   level   - clear the footprint, level a pad, fill foundations, and grade the pad's edges into the landscape
+#   natural - keep the land and build onto it (terraces, stilts, cliff-side, piers); only trees and plants are cleared
+terrain:
+  # Blocks surveyed to each side of the site (and ahead of the player). Larger reads more columns on the main thread.
+  scan-radius: 80
+  # Site mode when Claude does not choose one (templates always use level).
+  default-mode: level
+  # Level mode: blend the pad into the surrounding terrain over this many blocks (0 = sheer cut and fill edges).
+  grade-margin: 8
+  # Level mode: the most one graded column is cut or raised.
+  max-grade: 24
+
+# Renovating existing builds: "Architect, fix and renovate this base" (or /architect renovate <what to do>).
+# The Architect captures the build you look at (or your /architect pos1 + pos2 selection), studies renders and an analysis
+# of it (floors, rooms, damage, water, dark spots), edits it in place and places only the changes. Containers, signs,
+# banners, spawners and item-frame mounts are never touched. Everything it changes can be undone, also after a restart.
+renovate:
+  enabled: true
+  # How far from the targeted block a build may extend (blocks, each direction), and its height.
+  max-radius: 160
+  max-height: 192
+  # Largest build (blocks) one renovation may read. Mega bases need room; lower this on small servers.
+  max-blocks: 2000000
+  # Chunks read per tick while capturing (spread over ticks so the server never stalls).
+  chunks-per-tick: 12
+  # Show a ghost preview of the changes and wait for /architect confirm (or "yes" in chat) before building.
+  require-confirm: false
+  # How long the ghost preview stays visible while waiting.
+  preview-seconds: 60
+  # After building, re-read the build and fix what slipped through (water leaks, dark spots), then report.
+  verify: true
+
+# Land protection: the Architect only edits where the requesting player could build.
+protection:
+  # auto: WorldGuard/GriefPrevention hooks, plus a block-break event check as the player when CoreProtect is not installed.
+  # events: always also run the event check (covers Lands, Towny, PlotSquared, ...). hooks: only the plugin hooks. off: no checks.
+  # architect.bypass.protection skips the check.
+  mode: auto
+  # Log every block the Architect changes to CoreProtect (user "#architect:<player>"), so staff can roll it back.
+  coreprotect-logging: true
+
+# Elevator pads: a block type players jump on to go up to the next pad in the same column, or sneak on to go down.
+# The Architect's elevator op can build them (type native). Players need architect.elevator.use (default true).
+elevator:
+  enabled: true
+  block: lodestone
+  max-distance: 96
+
+render:
+  # Optional: a resource pack .zip or a Minecraft client .jar (for example .minecraft/versions/26.3/26.3.jar). The
+  # renders Claude sees then use the real average colour of every block texture instead of the built-in palette.
+  texture-pack: ""
+
+npc:
+  enabled: true
+  name: Architect
+  # A Minecraft username whose skin the builder wears (empty = default skin).
+  skin: ""
+  # Relay the Architect's short design commentary in chat.
+  narrate: true
+
+# Talk to the Architect in normal chat. Start a message with its name (or a trigger word), e.g.
+#   "Architect, build me a gothic cathedral over there"   "architect follow me"   "@architect how is the build going?"
+# After you address it, your next messages within conversation-seconds go to it too while you are within range of it.
+chat:
+  enabled: true
+  # The conversation model is separate from the design model. Effort low keeps replies quick and cheap.
+  model: claude-opus-5-5
+  effort: low
+  max-tokens: 4000
+  trigger-words: [architect]
+  conversation-seconds: 90
+  # Blocks: how close you must be to the NPC for follow-up messages without its name to reach it.
+  range: 32
+  # Hide messages addressed to the Architect from other players' chat.
+  hide-addressed-messages: false
+  # Per-player conversation memory (messages) before the oldest turns are dropped.
+  max-history-messages: 40
+  # Permission needed to talk to the Architect (asking it to build also needs architect.use).
+  permission: architect.use
+
+limits:
+  cooldown-seconds: 30
+  # Per-player daily limits on Claude designs and tokens (0 = unlimited). architect.unlimited bypasses them.
+  designs-per-day: 0
+  tokens-per-day: 0
+  max-concurrent-designs: 2
+  max-undo: 5

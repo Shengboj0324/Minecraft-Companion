@@ -1,0 +1,87 @@
+[
+ {
+  "id": "cozy_cottage",
+  "request": "a cozy cottage with a vegetable garden",
+  "style": "rustic"
+ },
+ {
+  "id": "blacksmith",
+  "request": "a medieval blacksmith workshop with a forge, chimney and an open work yard"
+ },
+ {
+  "id": "elven_tower",
+  "request": "an elven mage tower overlooking a lake, slender and elegant",
+  "style": "fantasy",
+  "site": "Gentle slope down to a lake on the far side."
+ },
+ {
+  "id": "japanese_teahouse",
+  "request": "a japanese tea house with a zen garden and a small bridge over a koi pond",
+  "style": "japanese"
+ },
+ {
+  "id": "nordic_mead_hall",
+  "request": "a huge viking mead hall with carved dragon heads on the gables",
+  "style": "nordic"
+ },
+ {
+  "id": "desert_bazaar",
+  "request": "a desert bazaar: domed market hall, arcades, palms and a well",
+  "style": "desert"
+ },
+ {
+  "id": "modern_house",
+  "request": "a modern two storey house with a pool and big windows",
+  "style": "modern"
+ },
+ {
+  "id": "dwarven_gate",
+  "request": "a monumental dwarven mountain gate with statues of guardians and a forge hall behind it",
+  "style": "dwarven"
+ },
+ {
+  "id": "gothic_cathedral",
+  "request": "a mega build: a gothic cathedral with twin spires, flying buttresses and a rose window",
+  "style": "gothic"
+ },
+ {
+  "id": "castle_mega",
+  "request": "a mega castle on a hill: concentric walls, a great keep, towers and a gatehouse"
+ },
+ {
+  "id": "generational_town",
+  "request": "found a small fishing hamlet by the sea: a few cottages, a dock and a well",
+  "follow_up": "a generation later the hamlet prospers: add a stone harbour wall, a market square and a chapel",
+  "site": "Flat coastline, sea to the south."
+ },
+ {
+  "id": "landmark_eiffel",
+  "request": "Build the Eiffel Tower",
+  "style": "classical"
+ },
+ {
+  "id": "landmark_colosseum",
+  "request": "Build the Roman Colosseum at full scale, partly ruined on one side like today",
+  "style": "classical"
+ },
+ {
+  "id": "landmark_taj_mahal",
+  "request": "Build the Taj Mahal with its minarets and reflecting pool",
+  "style": "desert"
+ },
+ {
+  "id": "landmark_notre_dame",
+  "request": "Recreate Notre-Dame de Paris with its twin towers, rose windows, spire and flying buttresses",
+  "style": "gothic"
+ },
+ {
+  "id": "supertall_twisting",
+  "request": "A futuristic twisting glass supertall skyscraper, about 200 blocks high, on a landscaped podium",
+  "style": "modern"
+ },
+ {
+  "id": "stadium_mega",
+  "request": "A modern football stadium with a sweeping elliptical roof and tiered seating for a mega city",
+  "style": "modern"
+ }
+]

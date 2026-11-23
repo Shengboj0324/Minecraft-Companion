@@ -1,0 +1,23 @@
+# build output
+.gradle/
+build/
+out/
+*.class
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# local test server (worlds, logs, the server's config.yml with an API key, the bundled JDK)
+test-server/
+run/
+
+# plugin jars are published as GitHub Release assets, not committed
+dist/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# secrets
+*.env
+config.local.yml
